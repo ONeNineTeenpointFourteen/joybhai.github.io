@@ -1,0 +1,494 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+:root {
+  --bg-color: #081b29;
+  --second-bg-color: #112e42;
+  --text-color: #ededed;
+  --main-color: #00abf0;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: .3s;
+}
+
+.header.scrolled {
+  background: var(--bg-color);
+}
+
+
+ 
+   .slider-container {
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+      margin: 2rem auto;
+    }
+
+    .slider-image {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s ease-in-out, clip-path 0.5s ease-in-out, border-color 0.5s;
+     
+      box-sizing: border-box;
+    }
+
+   
+ .slide-button {
+      position: absolute;
+      top: 33%;
+      cursor: pointer;
+      color: greenyellow;
+      font-size: 5rem;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+    }
+
+    .slide-button.right {
+      text-align: center; /* Adjust the value to position it more to the right */
+      transform: translateY(-50%);
+      white-space: nowrap;
+  overflow: hidden;
+  background: linear-gradient(90deg, red, green, yellow, blue, cyan, red, green, yellow, blue, cyan);
+  background-size: 2000% 2000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  animation: colorChange 5s infinite, textShadowChange 10s infinite;
+    }
+
+    
+
+    /* Arrow Animation */
+    .arrow-button {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .arrow-button.pull {
+      animation: pullArrow 0.3s alternate infinite;
+    }
+
+    @keyframes pullArrow {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-10px);
+      }
+    }
+
+
+.logo {
+  font-size: 3rem;
+  color: var(--text-color);
+  font-weight: 600;
+  color: cyan;
+  white-space: nowrap;
+  overflow: hidden;
+  background: linear-gradient(90deg, red, green, yellow, blue, cyan, red, green, yellow, blue, cyan);
+  background-size: 2000% 2000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  animation: colorChange 5s infinite, textShadowChange 10s infinite;
+}
+
+  
+    @keyframes colorChange {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      25% {
+        background-position: 25% 50%;
+      }
+
+      50% {
+        background-position: 50% 50%;
+      }
+
+      75% {
+        background-position: 75% 50%;
+      }
+    }
+
+.navbar a {
+  font-size: 1.7rem;
+  color: greenyellow;
+  font-weight: 500;
+  margin-left: 3.5rem;
+  transition: .3s;
+  
+}
+
+.navbar a:focus {
+  color: var(--main-color);
+}
+
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--text-color);
+  display: none;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  background: linear-gradient(90deg, red, green, yellow, blue, cyan, red, green, yellow, blue, cyan);
+  background-size: 2000% 2000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  animation: colorChange 5s infinite, textShadowChange 10s infinite;
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 9%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home{
+  font-size: 20px;
+}
+
+
+ em {
+  margin-top: 2rem;
+ 
+}
+
+.typewriter em {
+  overflow: hidden;
+  border-right: .15em solid cyan; /* Cursor effect */
+  animation: typing 1s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0; /* Start with 0 width, effectively hiding the text */
+  }
+  to {
+    width: 100%; /* Full width, revealing the entire text */
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent; /* Invisible caret at the beginning and end */
+  }
+  50% {
+    border-color:cyan; /* Visible caret in the middle */
+  }
+}
+
+
+
+.home-sci{
+  position: absolute;
+  bottom:20px;
+  width: 170px;
+  justify-content: center;
+  align-items: center;
+  
+ 
+  padding-bottom: 50px;
+}
+.home-sci a{
+  position: relative;
+ display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: .2rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--main-color);
+  z-index: 1;
+  overflow:hidden;
+  transition: .5s;
+  margin-left: 40%;
+}
+
+.home-sci a:hover{
+  color:black;
+   box-shadow: 0px 1px 90px 10px cyan;
+}
+.home-sci a::before{
+  content: '';
+  position:absolute;
+  top:0;
+  left:0;
+  background:cyan;
+
+  z-index: -1;
+  width:0;
+  height: 100%;
+  transition: .5s;
+}
+
+.home-sci a:hover::before{
+  width: 100%;
+ 
+}
+
+@keyframes clicker{
+  0%{
+    box-shadow: none;
+    border: 2px solid cyan;
+  }
+  50%{
+    box-shadow: 0 0 10px cyan,0 0 20px cyan, 0 0 30px cyan;
+    border: 2px solid cyan;
+  }
+    100% {
+    box-shadow: none;
+    border: 2px solid cyan;
+  }
+}
+
+
+
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 9%;
+  background: var(--bg-color);
+  margin-top: -7rem;
+
+}
+
+.footer-text{
+  font-size: 1.6rem;
+}
+
+
+
+
+
+ /* BREAKPOINTS */
+
+ @media (max-width:1200px){
+  html {
+    font-size: 55%;
+  }
+ }
+
+ @media (max-width: 991px) {
+  .header{
+    padding: 2rem 4%;
+  }
+  section{
+    padding: 10rem 4% 2rem;
+  }
+  .home{
+    padding: 0 4%;
+  
+  }
+  .footer {
+    padding: 2rem 4%;
+  }
+  .home-sci {
+    display: flex;
+    
+    justify-content: space-between;
+    float: left;
+    
+    
+    /* Set the container's height to occupy the full viewport height */
+  }
+
+  .home-sci a {
+    justify-content: center;
+   
+    /* Add some space between the social media icons */
+  }
+
+ }
+
+/* Existing CSS for the menu icon and default navbar */
+ @media (max-width: 768px) {
+  .header{
+    background: var(--bg-color);
+  }
+
+/* CSS for the default menu icon (hamburger) */
+#menu-icon {
+  display: block;
+  font-size: 2.5rem;
+  cursor: pointer;
+  width: 40px; /* Adjust the size of the icon container as needed */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s;
+}
+
+/* CSS for the cross icon (×) */
+#menu-icon.active {
+  background-color: var(--bg-color); /* Change the background color to match your design */
+  color: white; /* Change the text color to match your design */
+}
+
+#menu-icon.active:before {
+  content: "\00D7"; /* Unicode value for the cross (×) symbol */
+  font-size: 4rem;
+}
+
+   .navbar {
+    position: fixed;
+    top: 6.5rem; /* Adjust the top value to move the navbar below the header */
+    left: -100%;
+    width: 100%; /* Adjust the width as needed */
+
+    background: var(--bg-color); /* Change to cyan for the initial background effect */
+    transition: left 0.5s, background 0.5s; /* Add background transition */
+    z-index: 999; /* Add z-index to place it above other elements */
+  }
+  .navbar a:hover{
+    
+    color: white;
+    background-color: rgb(1, 157, 255);
+  }
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 2rem 1rem 1rem 3rem; 
+    color: var(--text-color);
+  }
+.navbar.active {
+  left: 0;
+  background: cyan; /* Change the background color to red after the effect */  
+}
+
+
+
+
+  
+  #menu-icon.active + .navbar {
+    background: var(cyan);
+  } 
+  
+  .im .img2 {
+    margin-top: -10rem;
+    width: 150px;
+    height: 150px;
+  }
+
+  .home {
+   justify-content: center;
+   flex-direction: column ;
+    align-items: center;
+   
+  }
+
+  .home-sci {
+    display: flex;
+    
+    justify-content: space-between;
+    float: left;
+    margin: 5px;
+    /* Set the container's height to occupy the full viewport height */
+  }
+
+  .home-sci a {
+    justify-content: center;
+   
+    /* Add some space between the social media icons */
+  }
+
+  
+}
+
+
+
+@media(max-width: 520px){
+  html{
+    font-size: 50%;
+  }
+
+  .home-sci{
+    width: 160px;
+  }
+
+  .home-sci a{
+    width: 38px;
+    height: 38px;
+  }
+  
+
+}
+
+@media(max-width:462px){
+ 
+  .footer{
+    flex-direction: column-reverse;
+
+  }
+footer p{
+    margin-top: 2rem;
+  }
+}
+  
+
+@media(max-width: 371px){
+  .home{
+    justify-content: center;
+  
+  }
+  .home-content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+ 
+  
+}
+
